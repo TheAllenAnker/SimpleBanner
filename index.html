@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>My First Simple Banner</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
 <div class="main">
+    <!--Banner area for images-->
     <div class="banner">
         <a href="">
-            <div class="banner-slide slide1"></div>
+            <div class="banner-slide slide1 slide-active"></div>
         </a>
         <a href="">
             <div class="banner-slide slide2"></div>
@@ -16,6 +18,15 @@
         <a href="">
             <div class="banner-slide slide3"></div>
         </a>
+    </div>
+    <!--Previous and next image button-->
+    <a href="javascript:void(0)" class="button prev" id="prev"></a>
+    <a href="javascript:void(0)" class="button next" id="next"></a>
+    <!--dots for images-->
+    <div class="dots" id="dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
     </div>
 </div>
 </body>

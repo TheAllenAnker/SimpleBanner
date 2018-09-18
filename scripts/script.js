@@ -1,11 +1,11 @@
-function addLoadEvent(func){
+function addLoadEvent(func) {
     var old_onload = window.onload;
     // the first onload function to be added
     if (typeof window.onload != "function") {
-            window.onload = func;
+        window.onload = func;
     } else {
         // more functions need to be added
-        window.onload = function() {
+        window.onload = function () {
             old_onload();
             func();
         }
@@ -21,7 +21,7 @@ var timer = null;
 
 function autoImageSlide() {
     var banner_area = document.getElementById('main');
-    banner_area.onmouseover = function() {
+    banner_area.onmouseover = function () {
         if (timer) {
             clearInterval(timer);
         }
@@ -89,7 +89,39 @@ function prepareDots() {
     }
 }
 
+function setMenu() {
+    if (!document.getElementsByClassName) return false;
+    menuItems = document.getElementsByClassName('menu-item');
+    for (var i = 0; i < menuItems.length; i++) {
+        menuItems[i].id = 'menu' + i;
+        menuItems[i].onmouseover = function () {
+            var menuI =  this.id.slice(4);
+            showMenu(menuI);
+        };
+
+        menuItems[i].onmouseout = function () {
+            showMenu(-1);
+        };
+    }
+}
+
+function showMenu(menuI) {
+    if (!document.getElementsByClassName) return false;
+    subMenu = document.getElementsByClassName('sub-menu')[0];
+    innerBoxes = subMenu.getElementsByClassName('inner-box');
+    for (var i = 0; i < innerBoxes.length; i++) {
+        innerBoxes[i].style.display = 'none'
+    }
+    if (menuI != -1) {
+        subMenu.className = 'sub-menu';
+        innerBoxes[menuI].style.display = 'block';
+    } else {
+        subMenu.className = 'sub-menu hide';
+    }
+}
+
 // add multiple window.onload functions
 addLoadEvent(autoImageSlide);
 addLoadEvent(prepareArrow);
 addLoadEvent(prepareDots);
+addLoadEvent(setMenu);

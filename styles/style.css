@@ -104,3 +104,63 @@ body {
     box-shadow: 0 0 0 2px rgba(7, 17, 27, 0.4) inset;
     background: #fff;
 }
+
+.menu-box {
+    width: 244px;
+    height: 460px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(7, 17, 27, 0.5);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.menu-content {
+    width: 244px;
+    height: 460px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    padding-top: 6px;
+}
+
+.menu-item {
+    position: relative;
+    height: 64px;
+    line-height: 66px;
+    font-size: 16px;
+    padding: 0 24px;
+}
+
+.menu-item a:link, .menu-item a:visited {
+    color: #fff;
+}
+
+.menu-item a {
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 8px;
+    height: 63px;
+}
+
+.menu-item i {
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    top: 0;
+    font-family: icon-font;
+    font-style: normal;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@font-face {
+    font-family: "icon-font";
+    src: url(../imgs/font/iconfont.eot);
+    src: url(../imgs/font/iconfont.eot) format("embedded-opentype"),
+         url(../imgs/font/iconfont.woff) format("woff"),
+         url(../imgs/font/iconfont.ttf) format("truetype"),
+         url(../imgs/font/iconfont.svg#iconfog) format("svg");
+}

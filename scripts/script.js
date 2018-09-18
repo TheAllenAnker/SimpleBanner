@@ -51,9 +51,9 @@ function changeImage() {
 
 function changeDots() {
     for (var i = 0; i < dots.length; i++) {
-        dots[i].setAttribute('class', '');
+        dots[i].className = '';
     }
-    dots[index].setAttribute('class', 'active');
+    dots[index].className = 'active';
 }
 
 function prepareArrow() {
